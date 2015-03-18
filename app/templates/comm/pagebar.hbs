@@ -1,0 +1,44 @@
+{{#if totalItems}}
+<nav>
+  <ul class="pagination pull-right">
+    <li class="disabled">
+      <a aria-label="Next">
+        <span aria-hidden="true">总数：{{totalItems}}</span>
+      </a>
+    </li>
+    {{#if isPageFirst}}
+      <li class="disabled">
+        <a aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+    {{else}}
+      <li>
+        {{#link-to routeName pagePrev pageSize aria-label="Previous"}}
+          <span aria-hidden="true">&laquo;</span>
+        {{/link-to}}
+      </li>
+    {{/if}}
+    {{#each index in pageIndexs}}
+      <li>
+        {{#link-to routeName index pageSize class="abc"}}
+          {{index}}
+        {{/link-to}}
+      </li>
+    {{/each}}
+    {{#if isPageLast}}
+      <li class="disabled">
+        <a aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    {{else}}
+      <li>
+        {{#link-to routeName pageNext pageSize aria-label="Next"}}
+          <span aria-hidden="true">&raquo;</span>
+        {{/link-to}}
+      </li>
+    {{/if}}
+  </ul>
+</nav>
+{{/if}}

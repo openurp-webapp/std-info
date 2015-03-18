@@ -1,0 +1,254 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"find",
+				"findById"
+			],
+			[
+				"attr",
+				"attributeBindings"
+			],
+			[
+				"pro",
+				"property"
+			],
+			[
+				"nation",
+				"nation_id"
+			],
+			[
+				"tr",
+				"transitionToRoute"
+			],
+			[
+				"lin",
+				"link-to"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+		],
+		"width": 467.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"pwd",
+			"ls"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/chii/workspace/sfu/std-info"
+	],
+	"file_history":
+	[
+		"/Users/chii/workspace/demo/demo-emberjs/nation/app/app.js",
+		"/Users/chii/workspace/demo/demo-emberjs/nation/app/controllers/nations/edit.js",
+		"/Users/chii/workspace/demo/demo-emberjs/nation/public/js/ember-extend.js",
+		"/Users/chii/workspace/demo/demo-emberjs/nation/app/routes/nations/info.js",
+		"/Users/chii/workspace/demo/demo-emberjs/nation/app/routes/nations/index.js",
+		"/Users/chii/workspace/demo/demo-emberjs/nation/app/routes/nations/edit.js",
+		"/Users/chii/workspace/demo/demo-emberjs/nation/app/templates/nations/edit.hbs",
+		"/Users/chii/workspace/demo/demo-emberjs/nation/app/templates/nations/info.hbs",
+		"/Users/chii/workspace/demo/demo-emberjs/nation/app/index.html",
+		"/Users/chii/workspace/demo/demo-emberjs/nation/app/templates/nations/index.hbs",
+		"/Users/chii/workspace/demo/demo-emberjs/nation/app/router.js",
+		"/Users/chii/workspace/demo/demo-emberjs/nation/bower_components/bootstrap/less/forms.less",
+		"/Users/chii/workspace/demo/demo-emberjs/nation/public/js/store.js",
+		"/Users/chii/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/chii/workspace/demo/demo-emberjs/nation/app/controllers/nations/index.js",
+		"/Users/chii/workspace/demo/demo-emberjs/nation/app/templates/comm/pagebar.hbs",
+		"/Users/chii/workspace/demo/demo-emberjs/nation/dist/index.html",
+		"/Users/chii/workspace/demo/demo-emberjs/nation/app/js/store.js",
+		"/Users/chii/workspace/demo/demo-emberjs/nation/bower_components/ember-data/ember-data.js",
+		"/Users/chii/workspace/demo/demo-emberjs/nation/config/environment.js",
+		"/Users/chii/workspace/demo/demo-emberjs/nation/app/templates/nations/test.hbs",
+		"/Users/chii/workspace/demo/demo-emberjs/nation/app/templates/application.hbs",
+		"/Users/chii/workspace/demo/demo-emberjs/nation/app/adapters/application.js",
+		"/Users/chii/workspace/demo/demo-emberjs/nation/app/routes/nations.js",
+		"/Users/chii/workspace/demo/demo-emberjs/nation/app/controllers/nations.js",
+		"/Users/chii/workspace/demo/demo-emberjs/nation/app/models/nation.js",
+		"/Users/chii/workspace/demo/demo-emberjs/nation/app/routes/nation.js",
+		"/Users/chii/workspace/demo/demo-emberjs/nation/app/templates/nations.hbs",
+		"/Users/chii/workspace/demo/demo-emberjs/nation/Brocfile.js",
+		"/Users/chii/workspace/demo/demo-emberjs/nation/app/controllers/nactions.js",
+		"/Users/chii/workspace/demo/demo-emberjs/todo-mvc/app/router.js",
+		"/Users/chii/workspace/demo/demo-emberjs/todo-mvc/app/app.js",
+		"/Users/chii/workspace/demo/demo-emberjs/todo-mvc/app/controllers/todo.js",
+		"/Users/chii/workspace/demo/demo-emberjs/todo-mvc/app/controllers/todos.js",
+		"/Users/chii/workspace/demo/ember-cli-todos/app/adapters/application.js",
+		"/Users/chii/workspace/demo/ember-cli-todos/app/models/todo.js",
+		"/Users/chii/workspace/demo/todo-mvc/app/styles/app.css",
+		"/Users/chii/workspace/demo/todo-mvc/config/environment.js",
+		"/Users/chii/workspace/demo/ember-cli-todos/app/components/edit-todo.js",
+		"/Users/chii/workspace/demo/ember-cli-todos/package.json",
+		"/Users/chii/workspace/demo/ember-cli-todos/app/index.html",
+		"/Users/chii/workspace/demo/ember-cli-todos/app/router.js",
+		"/Users/chii/workspace/demo/ember-cli-todos/app/todos/template.hbs",
+		"/Users/chii/workspace/demo/ember-cli-todos/app/todos/route.js",
+		"/Users/chii/workspace/demo/ember-cli-todos/app/app.js",
+		"/Users/chii/workspace/sfu/edu-scheduler/app/index.html",
+		"/Users/chii/workspace/demo/ember-nations/js/application.js",
+		"/Users/chii/workspace/demo/ember-nations/js/models/nation.js",
+		"/Users/chii/workspace/demo/ember-nations/js/router.js",
+		"/Users/chii/workspace/demo/ember-nations/index.html",
+		"/Users/chii/workspace/demo/ember-nations/nations",
+		"/Users/chii/workspace/demo/ember-nations/js/nations.json",
+		"/Users/chii/temp/a.html",
+		"/Users/chii/Downloads/宣讲会预约说明.htm",
+		"/Users/chii/repository/chii/demo/demo-ssh/1.0/demo-ssh-1.0.pom",
+		"/Users/chii/workspace/chii/qq-web/pom.xml"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"route",
+			"nation_id",
+			"		\n",
+			")\n",
+			"for",
+			"}}\n",
+			"this",
+			"",
+			"",
+			"$O$2"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"，",
+			"$O$2&"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "std-info.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 227.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
