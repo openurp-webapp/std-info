@@ -34,7 +34,7 @@
     {{#each student in this itemController='comm/list/item'}}
       <tr {{action 'select'}}>
         <td>{{input type="checkbox" checked=student.isSelect}}</td>
-        <td>{{student.code}}</td>
+        <td>{{#link-to 'students.info' student.id}}{{student.code}}{{/link-to}}</td>
         <td>{{student.person.name}}</td>
         <td>{{student.stdType.name}}</td>
         <td>{{student.department.name}}</td>

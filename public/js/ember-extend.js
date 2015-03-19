@@ -15,7 +15,7 @@ Ember.Store = Ember.Object.extend({
     if(controller){
       var searchField = Ember.getParamObject(controller.get('searchField'));
       Ember.$.extend(opts, searchField);
-      controller.set('model', []);
+      //controller.set('model', []);
     }
 		var url = this.get('host') + name + '.json';
 		if(route.select) opts.select = route.select;
@@ -55,7 +55,7 @@ Ember.EntityRoute = Ember.Route.extend({
 		this._super(controller, model);
 	},
 	model : function (params){
-    // console.log('params', params, this.store);
+    console.log('params', params, this.store);
     if(params.id){
     	return this.store.find(params.id);
     }
@@ -64,8 +64,11 @@ Ember.EntityRoute = Ember.Route.extend({
 });
 Ember.PageRoute = Ember.EntityRoute.extend({
 	setupController: function(controller, model) {
-    controller.set('routeName', this.routeName);
-    controller.setData(this.get('data'));
+    // console.log("controller.setData(this.get('data'))")
+    if(controller.pageIndex){
+      controller.set('routeName', this.routeName);
+      controller.setData(this.get('data'));
+    }
     this._super(controller, model);
   }
 });
@@ -75,7 +78,7 @@ Ember.PageController = Ember.ArrayController.extend({
 	pageIndex: 1,
 	isSelectAll: false,
   setData : function(data){
-    console.log('setData');
+    // console.log('setData');
     this.set('pageIndex', data.pageIndex);
     this.set('pageSize', data.pageSize);
     this.set('totalItems', data.totalItems);
@@ -135,6 +138,14 @@ Ember.PageController = Ember.ArrayController.extend({
   	});
   	return num;
   }.property('@each.isSelect'),
+  getTopRoute : function(){
+    return this.routeName.substring(0, this.routeName.indexOf('.'));
+  },
+  getId : function(){
+    this.forEach(function(m){
+      if(m.isSelect) return m.id;
+    });
+  },
 	actions :{
 		selectAll : function(){
 			var isSelect = this.isSelectAll = !this.isSelectAll;
@@ -142,11 +153,14 @@ Ember.PageController = Ember.ArrayController.extend({
 				m.isSelect = isSelect;
 			});
 		},
-		add : function(){
-			this.transitionToRoute(this.routeName.substring(0, this.routeName.indexOf('.') + 1) + 'edit');
-		},
+    add : function(){
+      this.transitionToRoute(this.getTopRoute() + '.add');
+    },
+    info : function(){
+      this.transitionToRoute(this.getTopRoute() + '.info', this.getId());
+    },
     edit : function (){
-      var ids = this.getSelectIds();
+      this.transitionToRoute(this.getTopRoute() + '.edit', this.getId());
     },
     remove : function(){
 
@@ -162,6 +176,11 @@ Ember.PageController = Ember.ArrayController.extend({
       }
     }
 	}
+});
+
+Ember.Handlebars.helper('if-equals2', function(v1, v2, options) {
+  console.log('ifEquals', v1, v2, v1 == v2);
+  // reutrn options.fn(this);
 });
 
 Ember.LinkView.reopen({

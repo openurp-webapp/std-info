@@ -1,1 +1,125 @@
-{{outlet}}
+<div style="float:right; margin-top: -45px;">
+  {{#link-to 'students.index' 1 20 class="btn btn-default"}}返回{{/link-to}}
+</div>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">基本信息</h3>
+  </div>
+  <div class="panel-body">
+    <form class="form-horizontal">
+      <div class="row">
+        {{view 'info/item' label='学号' text=code}}
+        {{view 'info/item' label='姓名' text=person.name}}
+        <div class="col-md-4">
+          <div class="form-group">
+            <label class="col-sm-5 control-label">照片</label>
+            <p class="col-sm-7 form-control-static" style="height: 20px;">
+              <img src="http://service.urp.sfu.edu.cn/sns/photo/0c1c5034267dde4133f6aae6054fa737.jpg">
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        {{view 'info/item' label='曾用名' text='-'}}
+        {{view 'info/item' label='英文名' text='-'}}
+      </div>
+      <div class="row">
+        {{view 'info/item' label='性别' text='-'}}
+        {{view 'info/item' label='国家地区' text='-'}}
+      </div>
+      <div class="row">
+        {{view 'info/item' label='民族' text='-'}}
+        {{view 'info/item' label='政治面貌' text='-'}}
+      </div>
+      <div class="row">
+        {{view 'info/item' label='婚姻状况' text='-'}}
+        {{view 'info/item' label='出生日期' text='-'}}
+      </div>
+      <div class="row">
+        {{view 'info/item' label='身份证件类型' text=person.idType.name}}
+        {{view 'info/item' label='身份证件号' text='-'}}
+      </div>
+      <div class="row">
+        {{view 'info/item' label='籍贯' text='-'}}
+        {{view 'info/item' label='血型' text='-'}}
+      </div>
+      <div class="row">
+        {{view 'info/item' label='健康状况' text='-'}}
+        {{view 'info/item' label='身高' text='-'}}
+        {{view 'info/item' label='体重' text='-'}}
+      </div>
+      <div class="row">
+        {{view 'info/item' label='银行帐号' text='-'}}
+        {{view 'info/item' label='一卡通卡号' text='-'}}
+        {{view 'info/item' label='特长' text='-'}}
+      </div>
+      <div class="row">
+        {{view 'info/item' label='生源地' text='-'}}
+        {{view 'info/item' label='入学后户口区划' text='-'}}
+        {{view 'info/item' label='原户口性质' text='-'}}
+      </div>
+    </form>
+  </div>
+</div>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">学籍信息</h3>
+  </div>
+  <div class="panel-body">
+    <form class="form-horizontal">
+      <div class="row">
+        {{view 'info/item' label='院系（行政）' text=departemnt.name}}
+        {{view 'info/item' label='院系（专业）' text='-'}}
+        {{view 'info/item' label='校区' text='-'}}
+      </div>
+      <div class="row">
+        {{view 'info/item' label='现在年级' text='-'}}
+        {{view 'info/item' label='学制' text='-'}}
+        {{view 'info/item' label='学生类别' text=stdType.name}}
+      </div>
+      <div class="row">
+        {{view 'info/item' label='专业' text=major.name}}
+        {{view 'info/item' label='专业方向' text='-'}}
+        {{view 'info/item' label='班级' text=adminclass.name}}
+      </div>
+      <div class="row">
+        {{view 'info/item' label='入学日期' text='-'}}
+        {{view 'info/item' label='预计毕业日期' text='-'}}
+        {{view 'info/item' label='实际毕业日期' text='-'}}
+      </div>
+      <div class="row">
+        {{view 'info/item' label='是否有学籍' text='-'}}
+        {{view 'info/item' label='学籍生效日期' text='-'}}
+        {{view 'info/item' label='辅导员' text='-'}}
+      </div>
+      <div class="row">
+        {{view 'info/item' label='学籍状态' text='-'}}
+        {{view 'info/item' label='是否在籍' text='-'}}
+        {{view 'info/item' label='是否在校' text='-'}}
+      </div>
+      <div class="row">
+        {{view 'info/item' label='就读学历' text='-'}}
+        {{view 'info/item' label='就读学位' text='-'}}
+        {{view 'info/item' label='学们证编号' text='-'}}
+      </div>
+    </form>
+  </div>
+</div>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">入学信息</h3>
+  </div>
+  <div class="panel-body">
+    <form class="form-horizontal">
+      <div class="row">
+        {{view 'info/item' label='入学方式' text='-'}}
+        {{view 'info/item' label='是否预科生' text='-'}}
+        {{view 'info/item' label='毕业证发放日期' text='-'}}
+      </div>
+      <div class="row">
+        {{view 'info/item' label='何省市报考' text='-'}}
+        {{view 'info/item' label='准考证号' text='-'}}
+      </div>
+    </form>
+  </div>
+</div>

@@ -8,8 +8,9 @@ var Router = Ember.Router.extend({
 Router.map(function() {
   this.resource('students', function() {
     this.route('index', { path: '/:pageIndex/:pageSize' });
-    this.route('info');
-    this.route('edit');
+    this.route('add');
+    this.route('info', {path: '/:id'});
+    this.route('edit', {path: '/:id/edit'});
   });
   this.resource('adminclass', function() {
     this.route('index', { path: '/:pageIndex/:pageSize' });

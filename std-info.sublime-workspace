@@ -4,6 +4,54 @@
 		"selected_items":
 		[
 			[
+				"marg",
+				"margin-bottom"
+			],
+			[
+				"font",
+				"font-weight"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
+				"get",
+				"getId"
+			],
+			[
+				"page",
+				"pageIndex"
+			],
+			[
+				"pa",
+				"pageIndex"
+			],
+			[
+				"con",
+				"controller"
+			],
+			[
+				"sear",
+				"searchField"
+			],
+			[
+				"route",
+				"routeName"
+			],
+			[
+				"a",
+				"afterModel"
+			],
+			[
+				"de",
+				"department"
+			],
+			[
+				"tx",
+				"text-align"
+			],
+			[
 				"find",
 				"findById"
 			],
@@ -61,10 +109,64 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/chii/workspace/sfu/std-info"
+		"/Users/chii/workspace/sfu/std-info",
+		"/Users/chii/workspace/sfu/std-info/app",
+		"/Users/chii/workspace/sfu/std-info/app/components",
+		"/Users/chii/workspace/sfu/std-info/app/controllers",
+		"/Users/chii/workspace/sfu/std-info/app/controllers/comm",
+		"/Users/chii/workspace/sfu/std-info/app/controllers/comm/list",
+		"/Users/chii/workspace/sfu/std-info/app/controllers/students",
+		"/Users/chii/workspace/sfu/std-info/app/helpers",
+		"/Users/chii/workspace/sfu/std-info/app/models",
+		"/Users/chii/workspace/sfu/std-info/app/routes/adminclass",
+		"/Users/chii/workspace/sfu/std-info/app/routes/students",
+		"/Users/chii/workspace/sfu/std-info/app/styles",
+		"/Users/chii/workspace/sfu/std-info/app/templates",
+		"/Users/chii/workspace/sfu/std-info/app/templates/adminclass",
+		"/Users/chii/workspace/sfu/std-info/app/templates/comm",
+		"/Users/chii/workspace/sfu/std-info/app/templates/comm/info",
+		"/Users/chii/workspace/sfu/std-info/app/templates/components",
+		"/Users/chii/workspace/sfu/std-info/app/templates/students",
+		"/Users/chii/workspace/sfu/std-info/app/views",
+		"/Users/chii/workspace/sfu/std-info/app/views/info",
+		"/Users/chii/workspace/sfu/std-info/public",
+		"/Users/chii/workspace/sfu/std-info/public/js"
 	],
 	"file_history":
 	[
+		"/Users/chii/workspace/sfu/std-info/app/templates/comm/info/item.hbs",
+		"/Users/chii/workspace/sfu/std-info/app/templates/students/info.hbs",
+		"/Users/chii/workspace/sfu/std-info/app/styles/app.css",
+		"/Users/chii/workspace/sfu/std-info/app/controllers/students/info.js",
+		"/Users/chii/workspace/sfu/std-info/app/routes/students/info.js",
+		"/Users/chii/workspace/sfu/std-info/app/views/info/item.js",
+		"/Users/chii/workspace/sfu/std-info/app/templates/adminclass/index.hbs",
+		"/Users/chii/workspace/sfu/std-info/public/js/ember-extend.js",
+		"/Users/chii/workspace/sfu/std-info/app/templates/students/index.hbs",
+		"/Users/chii/workspace/sfu/std-info/app/routes/students/edit.js",
+		"/Users/chii/workspace/sfu/std-info/app/controllers/application.js",
+		"/Users/chii/workspace/sfu/std-info/app/router.js",
+		"/Users/chii/workspace/sfu/std-info/app/templates/application.hbs",
+		"/Users/chii/workspace/sfu/std-info/public/crossdomain.xml",
+		"/Users/chii/workspace/sfu/std-info/app/templates/comm/pagebar.hbs",
+		"/Users/chii/workspace/sfu/std-info/app/helpers/cal-sub.js",
+		"/Users/chii/workspace/sfu/std-info/app/helpers/if-equals.js",
+		"/Users/chii/workspace/sfu/std-info/app/helpers/nav-li.js",
+		"/Users/chii/workspace/sfu/std-info/app/helpers/equals.js",
+		"/Users/chii/workspace/sfu/std-info/app/helpers/equals22.js",
+		"/Users/chii/workspace/sfu/std-info/.gitignore",
+		"/Users/chii/workspace/sfu/std-info/app/controllers/students/index.js",
+		"/Users/chii/workspace/sfu/std-info/app/helpers/compare.js",
+		"/Users/chii/workspace/sfu/std-info/app/routes/students/index.js",
+		"/Users/chii/workspace/sfu/std-info/app/controllers/comm/list/item.js",
+		"/Users/chii/workspace/sfu/std-info/app/controllers/students/student.js",
+		"/Users/chii/workspace/sfu/std-info/app/routes/adminclass/index.js",
+		"/Users/chii/workspace/sfu/std-info/app/controllers/students.js",
+		"/Users/chii/workspace/sfu/std-info/app/models/student.js",
+		"/Users/chii/workspace/sfu/std-info/app/routes/application.js",
+		"/Users/chii/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/chii/workspace/sfu/std-info/app/index.html",
+		"/Users/chii/workspace/sfu/std-info/Brocfile.js",
 		"/Users/chii/workspace/demo/demo-emberjs/nation/app/app.js",
 		"/Users/chii/workspace/demo/demo-emberjs/nation/app/controllers/nations/edit.js",
 		"/Users/chii/workspace/demo/demo-emberjs/nation/public/js/ember-extend.js",
@@ -78,7 +180,6 @@
 		"/Users/chii/workspace/demo/demo-emberjs/nation/app/router.js",
 		"/Users/chii/workspace/demo/demo-emberjs/nation/bower_components/bootstrap/less/forms.less",
 		"/Users/chii/workspace/demo/demo-emberjs/nation/public/js/store.js",
-		"/Users/chii/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/Users/chii/workspace/demo/demo-emberjs/nation/app/controllers/nations/index.js",
 		"/Users/chii/workspace/demo/demo-emberjs/nation/app/templates/comm/pagebar.hbs",
 		"/Users/chii/workspace/demo/demo-emberjs/nation/dist/index.html",
@@ -124,7 +225,7 @@
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -139,6 +240,13 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"text=''",
+			"setData",
+			"pageIndex",
+			"src",
+			"this.model.get(\"isSelect\")",
+			"d>\n      <td>{{name}}</td>\n      <td>{{name}}</td>\n      <td>{{name}}</td>\n      <td>{{name}}</td",
+			"nation",
 			"route",
 			"nation_id",
 			"		\n",
@@ -156,6 +264,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"text='-'",
 			"，",
 			"$O$2&"
 		],
@@ -211,7 +320,7 @@
 	"project": "std-info.sublime-project",
 	"replace":
 	{
-		"height": 42.0
+		"height": 64.0
 	},
 	"save_all_on_build": true,
 	"select_file":
