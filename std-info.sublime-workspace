@@ -118,6 +118,7 @@
 		"/Users/chii/workspace/sfu/std-info/app/controllers/students",
 		"/Users/chii/workspace/sfu/std-info/app/helpers",
 		"/Users/chii/workspace/sfu/std-info/app/models",
+		"/Users/chii/workspace/sfu/std-info/app/routes",
 		"/Users/chii/workspace/sfu/std-info/app/routes/adminclass",
 		"/Users/chii/workspace/sfu/std-info/app/routes/students",
 		"/Users/chii/workspace/sfu/std-info/app/styles",
@@ -134,8 +135,8 @@
 	],
 	"file_history":
 	[
-		"/Users/chii/workspace/sfu/std-info/app/templates/comm/info/item.hbs",
 		"/Users/chii/workspace/sfu/std-info/app/templates/students/info.hbs",
+		"/Users/chii/workspace/sfu/std-info/app/templates/comm/info/item.hbs",
 		"/Users/chii/workspace/sfu/std-info/app/styles/app.css",
 		"/Users/chii/workspace/sfu/std-info/app/controllers/students/info.js",
 		"/Users/chii/workspace/sfu/std-info/app/routes/students/info.js",
