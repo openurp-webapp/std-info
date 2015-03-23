@@ -1,3 +1,36 @@
+DS.BeangleAdapter = DS.RESTAdapter.extend({
+  //append '.json' to buildURL
+  buildURL : function(typeKey, id, record){
+    return this._super(typeKey, id, record) + '.json';
+  },
+  //add typeKey to options
+  find: function(store, type, id, record) {
+    return this.ajax(this.buildURL(type.typeKey, id, record), 'GET', {typeKey: type.typeKey});
+  },
+  ajax: function(url, type, options) {
+    var adapter = this;
+    return new Ember.RSVP.Promise(function(resolve, reject) {
+      var hash = adapter.ajaxOptions(url, type, options);
+      hash.success = function(json, textStatus, jqXHR) {
+        json = adapter.ajaxSuccess(jqXHR, json);
+        //fixed typeKey for json
+        var data = {};
+        data[options.typeKey] = json;
+        json = data;
+        if (json instanceof DS.InvalidError) {
+          Ember.run(null, reject, json);
+        } else {
+          // console.log(json);
+          Ember.run(null, resolve, json);
+        }
+      };
+      hash.error = function(jqXHR, textStatus, errorThrown) {
+        Ember.run(null, reject, adapter.ajaxError(jqXHR, jqXHR.responseText, errorThrown));
+      };
+      Ember.$.ajax(hash);
+    }, 'DS: RESTAdapter#ajax ' + type + ' to ' + url);
+  }
+});
 Ember.Store = Ember.Object.extend({
 	// var name = route.entityName;
 	host : 'http://192.168.103.24:8080/edu-base-ds/default/',
@@ -55,9 +88,8 @@ Ember.EntityRoute = Ember.Route.extend({
 		this._super(controller, model);
 	},
 	model : function (params){
-    console.log('params', params, this.store);
     if(params.id){
-    	return this.store.find(params.id);
+      return this.store.find(params.id);
     }
 		return this.store.find(params);
 	}
