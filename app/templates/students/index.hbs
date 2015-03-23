@@ -32,7 +32,7 @@
   </thead>
   <tbody>
     {{#each student in this itemController='comm/list/item'}}
-      <tr {{action 'select'}}>
+      <tr {{action 'select' student}}>
         <td>{{input type="checkbox" checked=student.isSelect}}</td>
         <td>{{#link-to 'students.info' student.id}}{{student.code}}{{/link-to}}</td>
         <td>{{student.person.name}}</td>

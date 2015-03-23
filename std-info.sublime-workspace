@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"type",
+				"typeKey"
+			],
+			[
+				"tye",
+				"typeKey"
+			],
+			[
+				"pa",
+				"pageSize"
+			],
+			[
 				"marg",
 				"margin-bottom"
 			],
@@ -21,10 +33,6 @@
 			],
 			[
 				"page",
-				"pageIndex"
-			],
-			[
-				"pa",
 				"pageIndex"
 			],
 			[
@@ -79,6 +87,14 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "app/controllers/students/info.js",
+			"settings":
+			{
+				"buffer_size": 79,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -111,6 +127,7 @@
 	[
 		"/Users/chii/workspace/sfu/std-info",
 		"/Users/chii/workspace/sfu/std-info/app",
+		"/Users/chii/workspace/sfu/std-info/app/adapters",
 		"/Users/chii/workspace/sfu/std-info/app/components",
 		"/Users/chii/workspace/sfu/std-info/app/controllers",
 		"/Users/chii/workspace/sfu/std-info/app/controllers/comm",
@@ -136,16 +153,22 @@
 	"file_history":
 	[
 		"/Users/chii/workspace/sfu/std-info/app/templates/students/info.hbs",
+		"/Users/chii/workspace/sfu/std-info/public/js/ember-extend.js",
+		"/Users/chii/workspace/sfu/std-info/app/controllers/students/info.js",
+		"/Users/chii/workspace/sfu/std-info/app/routes/students/edit.js",
+		"/Users/chii/workspace/sfu/std-info/app/routes/students/info.js",
+		"/Users/chii/workspace/sfu/std-info/app/templates/students/edit.hbs",
+		"/Users/chii/workspace/sfu/std-info/app/controllers/comm/list/item.js",
+		"/Users/chii/workspace/sfu/std-info/app/templates/students/index.hbs",
+		"/Users/chii/workspace/sfu/std-info/app/models/student.js",
+		"/Users/chii/workspace/sfu/std-info/app/models/person.js",
+		"/Users/chii/workspace/sfu/std-info/app/adapters/application.js",
+		"/Users/chii/workspace/sfu/std-info/app/models/base/student.js",
+		"/Users/chii/workspace/sfu/std-info/app/controllers/application.js",
 		"/Users/chii/workspace/sfu/std-info/app/templates/comm/info/item.hbs",
 		"/Users/chii/workspace/sfu/std-info/app/styles/app.css",
-		"/Users/chii/workspace/sfu/std-info/app/controllers/students/info.js",
-		"/Users/chii/workspace/sfu/std-info/app/routes/students/info.js",
 		"/Users/chii/workspace/sfu/std-info/app/views/info/item.js",
 		"/Users/chii/workspace/sfu/std-info/app/templates/adminclass/index.hbs",
-		"/Users/chii/workspace/sfu/std-info/public/js/ember-extend.js",
-		"/Users/chii/workspace/sfu/std-info/app/templates/students/index.hbs",
-		"/Users/chii/workspace/sfu/std-info/app/routes/students/edit.js",
-		"/Users/chii/workspace/sfu/std-info/app/controllers/application.js",
 		"/Users/chii/workspace/sfu/std-info/app/router.js",
 		"/Users/chii/workspace/sfu/std-info/app/templates/application.hbs",
 		"/Users/chii/workspace/sfu/std-info/public/crossdomain.xml",
@@ -159,11 +182,9 @@
 		"/Users/chii/workspace/sfu/std-info/app/controllers/students/index.js",
 		"/Users/chii/workspace/sfu/std-info/app/helpers/compare.js",
 		"/Users/chii/workspace/sfu/std-info/app/routes/students/index.js",
-		"/Users/chii/workspace/sfu/std-info/app/controllers/comm/list/item.js",
 		"/Users/chii/workspace/sfu/std-info/app/controllers/students/student.js",
 		"/Users/chii/workspace/sfu/std-info/app/routes/adminclass/index.js",
 		"/Users/chii/workspace/sfu/std-info/app/controllers/students.js",
-		"/Users/chii/workspace/sfu/std-info/app/models/student.js",
 		"/Users/chii/workspace/sfu/std-info/app/routes/application.js",
 		"/Users/chii/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/Users/chii/workspace/sfu/std-info/app/index.html",
@@ -278,8 +299,37 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "app/controllers/students/info.js",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 79,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								79,
+								79
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
