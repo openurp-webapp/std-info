@@ -79,7 +79,11 @@ Ember.Store = Ember.Object.extend({
 
 	save : function(model){
 		var url = this.getUrl(model.id);
-		url += '?_method=PUT';
+    if(model.id){
+      url += '?_method=PUT';
+    }else{
+      url += '?_method=POST';
+    }
     console.log(url)
     // var params = this.getFormParams(model);
     // return Ember.$.post(url, params);
@@ -109,20 +113,35 @@ Ember.EntityRoute = Ember.Route.extend({
 		controller.set('store', this.get('store'));
     controller.routeName = this.routeName;
 		//调用父类方法
+    // console.log('setupController', model)
 		this._super(controller, model);
 	},
+  getParentRouteName : function (){
+    return this.routeName.substring(0, this.routeName.indexOf('.'));
+  },
   getIndexRouteName : function(){
-    return this.routeName.substring(0, this.routeName.indexOf('.')) + '.index';
+    return this.getParentRouteName() + '.index';
   },
   getInfoRouteName : function(){
-    return this.routeName.substring(0, this.routeName.indexOf('.')) + '.info';
+    return this.getParentRouteName() + '.info';
   },
 	model : function (params){
-    if(params.id){
+    if(params && params.id){
       return this.store.find(params.id);
+    }else{
+      return {};
     }
-		return this.store.find(params);
 	}
+});
+
+Ember.EntityAddRoute = Ember.EntityRoute.extend({
+  renderTemplate: function() {
+    this.render(this.getParentRouteName() + '/edit');
+  },
+  model : function(){
+    console.log('EntityAddRoute.model')
+    return {};
+  }
 });
 Ember.PageRoute = Ember.EntityRoute.extend({
 	setupController: function(controller, model) {
@@ -130,6 +149,9 @@ Ember.PageRoute = Ember.EntityRoute.extend({
       controller.setData(this.get('data'));
     }
     this._super(controller, model);
+  },
+  model : function(){
+    return this.store.find({});
   }
 });
 
@@ -146,8 +168,11 @@ Ember.EntityController = Ember.ObjectController.extend({
       var model = this.model;
       var controller = this;
       this.store.save(model).then(function(data){
-        // console.log(controller.get('shortName'))
-        controller.transitionToRoute(controller.store.route.getInfoRouteName(), model);
+        if(data.status == 'error'){
+          alert('保存失败');
+        }else{
+          controller.transitionToRoute(controller.store.route.getInfoRouteName(), model);
+        }
       }, function(){
         alert('保存失败');
       });

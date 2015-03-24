@@ -8,7 +8,6 @@ export default Ember.View.extend({
   label:'',
   text:'',
   divclass : function (){
-  	console.log('divclass')
   	return 'col-md-' + this.size;
   }.property('size')
 });

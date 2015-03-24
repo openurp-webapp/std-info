@@ -21,6 +21,7 @@
       <th>{{input type="checkbox" checked=allAreSelect}}</th>
       <th>Code</th>
       <th>Name</th>
+      <th>AlphaCode</th>
     </tr>
   </thead>
   <tbody>
@@ -29,6 +30,7 @@
         <td>{{input type="checkbox" checked=nation.isSelect}}</td>
         <td>{{#link-to 'nations.info' nation.id}}{{nation.code}}{{/link-to}}</td>
         <td>{{nation.name}}</td>
+        <td>{{nation.alphaCode}}</td>
       </tr>
     {{else}}
       <tr><td colspan="7" align="center">nations is not found!</td></tr>
