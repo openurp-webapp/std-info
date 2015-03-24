@@ -40,17 +40,16 @@ Ember.Store = Ember.Object.extend({
 	}.property('route'),
 	find : function(a, b){
     // console.log('Store.find', this.get('route').controller);
-		var name = this.get('entityName'), route = this.get('route');
-		if(typeof(a) != 'object'){
-			return this.findById(a, b);
-		}
-    var opts = a, controller = route.controller;
+    if(typeof(a) != 'object'){
+      return this.findById(a, b);
+    }
+    var url = this.getUrl();
+    var opts = a, route = this.route, controller = route.controller;
     if(controller){
       var searchField = Ember.getParamObject(controller.get('searchField'));
       Ember.$.extend(opts, searchField);
       //controller.set('model', []);
     }
-		var url = this.get('host') + name + '.json';
 		if(route.select) opts.select = route.select;
 		return Ember.$.getJSON(url, opts).then(function(data){
       if(typeof(b) == 'function'){
@@ -60,19 +59,26 @@ Ember.Store = Ember.Object.extend({
 			return data.items;
 		});
 	},
+  getUrl : function (id){
+    var name = this.get('entityName'), route = this.get('route'), url = route.url;
+    if(url){
+    }else{
+      url = this.get('host') + name;
+    }
+    if(id){
+      url += "/" + id;
+    }
+    url += '.json';
+    return url;
+  },
 	// return Ember.$.getJSON("http://192.168.103.24:8080/code-ds/person/nations/"+params.nation_id+".json");
 	findById : function(id, opts){
-		var name = this.get('entityName');
-		var url = this.get('host') + name + '/' + id + '.json';
+		var url = this.getUrl(id);
 		return Ember.$.getJSON(url);
 	},
 
 	save : function(model){
-		var name = this.get('entityName');
-		var url = this.get('host') + name;
-		if(model.id){
-			url += '/' + model.id;
-		}
+		var url = this.getUrl(model.id);
 		url += '?_method=PUT';
     console.log(url)
     // var params = this.getFormParams(model);
@@ -101,9 +107,16 @@ Ember.EntityRoute = Ember.Route.extend({
 	},
 	setupController : function(controller, model){
 		controller.set('store', this.get('store'));
+    controller.routeName = this.routeName;
 		//调用父类方法
 		this._super(controller, model);
 	},
+  getIndexRouteName : function(){
+    return this.routeName.substring(0, this.routeName.indexOf('.')) + '.index';
+  },
+  getInfoRouteName : function(){
+    return this.routeName.substring(0, this.routeName.indexOf('.')) + '.info';
+  },
 	model : function (params){
     if(params.id){
       return this.store.find(params.id);
@@ -113,9 +126,7 @@ Ember.EntityRoute = Ember.Route.extend({
 });
 Ember.PageRoute = Ember.EntityRoute.extend({
 	setupController: function(controller, model) {
-    // console.log("controller.setData(this.get('data'))")
     if(controller.pageIndex){
-      controller.set('routeName', this.routeName);
       controller.setData(this.get('data'));
     }
     this._super(controller, model);
@@ -135,8 +146,8 @@ Ember.EntityController = Ember.ObjectController.extend({
       var model = this.model;
       var controller = this;
       this.store.save(model).then(function(data){
-        //console.log(controller.get('shortName'))
-        controller.transitionToRoute(controller.get('shortName') + '.index', model);
+        // console.log(controller.get('shortName'))
+        controller.transitionToRoute(controller.store.route.getInfoRouteName(), model);
       }, function(){
         alert('保存失败');
       });

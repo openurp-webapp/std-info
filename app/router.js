@@ -15,6 +15,12 @@ Router.map(function() {
   this.resource('adminclass', function() {
     this.route('index', { path: '/:pageIndex/:pageSize' });
   });
+  this.resource('nations', function() {
+    this.route('index', { path: '/:pageIndex/:pageSize' });
+    this.route('add');
+    this.route('info', {path: '/:id'});
+    this.route('edit', {path: '/:id/edit'});
+  });
 });
 
 export default Router;

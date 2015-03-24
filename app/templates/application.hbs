@@ -5,8 +5,12 @@
 </header>
 <div class="container">
   <ul class="nav nav-tabs" {{action 'select'}}>
-    <li role="presentation" class="{{nav-li 'students'}}">{{#link-to 'students.index' 1 20}}学生信息{{/link-to}}</li>
-    <li role="presentation" class="{{nav-li 'adminclass'}}" >{{#link-to 'adminclass.index' 1 20}}班级信息{{/link-to}}</li>
+    <li role="presentation" class="{{nav-li 'students'}}">
+      {{#link-to 'students.index' 1 20}}学生信息{{/link-to}}</li>
+    <li role="presentation" class="{{nav-li 'nations'}}" >
+      {{#link-to 'nations.index' 1 20}}民族管理{{/link-to}}</li>
+    <li role="presentation" class="{{nav-li 'adminclass'}}" >
+      {{#link-to 'adminclass.index' 1 20}}班级信息{{/link-to}}</li>
   </ul>
   <div>
     {{outlet}}

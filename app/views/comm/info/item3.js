@@ -1,9 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.View.extend({
-  size: 12,
-  labelClass : 'col-sm-4 control-label',
-  textClass : 'col-sm-8',
+  size: 4,
+  labelClass : 'col-sm-5 control-label',
+  textClass : 'col-sm-7',
   templateName : 'comm/info/item',
   label:'',
   text:'',

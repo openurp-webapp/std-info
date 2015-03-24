@@ -1,6 +1,6 @@
-<div class="col-md-4">
+<div {{bind-attr class=view.divclass}}>
   <div class="form-group">
-    <label class="col-sm-5 control-label">{{view.label}}</label>
+    <label {{bind-attr class=view.labelClass}}>{{view.label}}</label>
     <div class="col-sm-7">
       {{input value=view.text class='form-control'}}
     </div>
