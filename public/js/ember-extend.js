@@ -89,6 +89,11 @@ Ember.Store = Ember.Object.extend({
     // return Ember.$.post(url, params);
     return Ember.$.post(url, {'data': JSON.stringify(model)});
 	},
+  remove : function (ids){
+    var url = this.getUrl();
+    url += '?_method=DELETE';
+    return Ember.$.post(url, {'ids': ids.join(',')});
+  },
   getFormParams : function(model, data, perfix){
     data = data || {}, perfix = perfix || this.get('route').controller.get('shortName') + '.';
     for(name in model){
@@ -113,7 +118,7 @@ Ember.EntityRoute = Ember.Route.extend({
 		controller.set('store', this.get('store'));
     controller.routeName = this.routeName;
 		//调用父类方法
-    // console.log('setupController', model)
+    console.log('setupController', this.routeName, model)
 		this._super(controller, model);
 	},
   getParentRouteName : function (){
@@ -125,6 +130,9 @@ Ember.EntityRoute = Ember.Route.extend({
   getInfoRouteName : function(){
     return this.getParentRouteName() + '.info';
   },
+  getEditRouteName : function(){
+    return this.getParentRouteName() + '.edit';
+  },
 	model : function (params){
     if(params && params.id){
       return this.store.find(params.id);
@@ -135,11 +143,14 @@ Ember.EntityRoute = Ember.Route.extend({
 });
 
 Ember.EntityAddRoute = Ember.EntityRoute.extend({
-  renderTemplate: function() {
-    this.render(this.getParentRouteName() + '/edit');
-  },
-  model : function(){
-    console.log('EntityAddRoute.model')
+  // renderTemplate: function() {
+  //   this.render(this.getParentRouteName() + '/edit');
+  // },
+  // setupController : function(controller, model){
+  //   this.controllerFor(this.getEditRouteName()).set('model', {});
+  //   this._super(controller, model);
+  // }
+  model : function (){
     return {};
   }
 });
@@ -150,8 +161,8 @@ Ember.PageRoute = Ember.EntityRoute.extend({
     }
     this._super(controller, model);
   },
-  model : function(){
-    return this.store.find({});
+  model : function(params){
+    return this.store.find(params);
   }
 });
 
@@ -258,6 +269,16 @@ Ember.PageController = Ember.ArrayController.extend({
     });
     return id;
   }.property('@each.isSelect'),
+  selectedIds : function(){
+    console.log('selectedId');
+    var ids = [];
+    this.forEach(function(m){
+      if(m.isSelect) {
+        ids.push(m.id);
+      }
+    });
+    return ids;
+  }.property('@each.isSelect'),
 	actions :{
 		selectAll : function(){
 			var isSelect = this.isSelectAll = !this.isSelectAll;
@@ -273,7 +294,16 @@ Ember.PageController = Ember.ArrayController.extend({
       this.transitionToRoute(this.getTopRoute() + '.edit', this.get('selectedId'));
     },
     remove : function(){
-
+      var ctl = this;
+      this.store.remove(this.get('selectedIds')).then(function(data){
+        if(data.status == 'error'){
+          alert('删除失败');
+        }else{
+          ctl._actions.search.call(ctl);
+        }
+      }, function(){
+        alert('删除失败');
+      });
     },
     search : function(){
       if(this.get('pageIndex') != 1){
