@@ -32,7 +32,6 @@ DS.BeangleAdapter = DS.RESTAdapter.extend({
   }
 });
 Ember.Store = Ember.Object.extend({
-	// var name = route.entityName;
 	host : 'http://192.168.103.24:8080/edu-base-ws/default/',
 	route: null,
 	entityName : function(){
@@ -48,7 +47,6 @@ Ember.Store = Ember.Object.extend({
     if(controller){
       var searchField = Ember.getParamObject(controller.get('searchField'));
       Ember.$.extend(opts, searchField);
-      //controller.set('model', []);
     }
 		if(route.select) opts.select = route.select;
 		return Ember.$.getJSON(url, opts).then(function(data){
@@ -71,7 +69,6 @@ Ember.Store = Ember.Object.extend({
     url += '.json';
     return url;
   },
-	// return Ember.$.getJSON("http://192.168.103.24:8080/code-ds/person/nations/"+params.nation_id+".json");
 	findById : function(id, opts){
 		var url = this.getUrl(id);
 		return Ember.$.getJSON(url);
@@ -84,9 +81,6 @@ Ember.Store = Ember.Object.extend({
     }else{
       url += '?_method=POST';
     }
-    console.log(url)
-    // var params = this.getFormParams(model);
-    // return Ember.$.post(url, params);
     return Ember.$.post(url, {'data': JSON.stringify(model)});
 	},
   remove : function (ids){
@@ -116,13 +110,12 @@ Ember.EntityRoute = Ember.Route.extend({
 	},
 	setupController : function(controller, model){
 		controller.set('store', this.get('store'));
-    controller.routeName = this.routeName;
+    controller.route = this;
 		//调用父类方法
-    console.log('setupController', this.routeName, model)
 		this._super(controller, model);
 	},
   getParentRouteName : function (){
-    return this.routeName.substring(0, this.routeName.indexOf('.'));
+    return this.get('routeName').substring(0, this.get('routeName').indexOf('.'));
   },
   getIndexRouteName : function(){
     return this.getParentRouteName() + '.index';
@@ -162,18 +155,12 @@ Ember.PageRoute = Ember.EntityRoute.extend({
     this._super(controller, model);
   },
   model : function(params){
+    // console.log('PageRoute model', params);
     return this.store.find(params);
   }
 });
 
 Ember.EntityController = Ember.ObjectController.extend({
-  shortName : '',
-  imgurl : function(){
-    // console.log(this.get('id'))
-    var url = 'http://service.urp.sfu.edu.cn/sns/photo/'+
-      hex_md5(this.get('code') + '@sfu.edu.cn')+'.jpg';
-    return url;
-  }.property('model.id'),
   actions : {
     save : function(){
       var model = this.model;
@@ -192,6 +179,7 @@ Ember.EntityController = Ember.ObjectController.extend({
 });
 
 Ember.PageController = Ember.ArrayController.extend({
+  routeName:'',
   searchField: {},
 	pageIndex: 1,
 	isSelectAll: false,
@@ -202,6 +190,9 @@ Ember.PageController = Ember.ArrayController.extend({
     this.set('totalItems', data.totalItems);
     this.set('model', data.items);
   },
+  routeName:function (){
+    return this.get('route').routeName;
+  }.property('pageIndex'),
 	pageLast: function(){
 		return Math.ceil(this.totalItems * 1.0 / this.pageSize);
 	}.property('pageSize', 'totalItems'),
@@ -257,7 +248,7 @@ Ember.PageController = Ember.ArrayController.extend({
   	return num;
   }.property('@each.isSelect'),
   getTopRoute : function(){
-    return this.routeName.substring(0, this.routeName.indexOf('.'));
+    return this.get('routeName').substring(0, this.get('routeName').indexOf('.'));
   },
   selectedId : function(){
     console.log('selectedId');
@@ -299,7 +290,8 @@ Ember.PageController = Ember.ArrayController.extend({
         if(data.status == 'error'){
           alert('删除失败');
         }else{
-          ctl._actions.search.call(ctl);
+          // ctl._actions.search.call(ctl);
+          ctl.send('search');
         }
       }, function(){
         alert('删除失败');
@@ -307,7 +299,7 @@ Ember.PageController = Ember.ArrayController.extend({
     },
     search : function(){
       if(this.get('pageIndex') != 1){
-        this.transitionToRoute(this.routeName, 1, this.get('pageSize'));
+        this.transitionToRoute(this.get('routeName'), 1, this.get('pageSize'));
       }else{
         var ctl = this;
         this.store.find({pageIndex:1, pageSize: this.get('pageSize')}, function(data){
