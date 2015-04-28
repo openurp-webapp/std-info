@@ -1,0 +1,40 @@
+<div style="margin-top:5px;">
+  <div class="btn-group" role="group" aria-label="...">
+    <button type="button" class="btn btn-default" {{action 'add'}}>添加</button>
+    {{#if isSelectOne}}
+    <button type="button" class="btn btn-default" {{action 'edit'}}>修改</button>
+    {{/if}}
+    {{#if isSelect}}
+    <button type="button" class="btn btn-default" {{action 'remove'}}>删除({{selectNum}})</button>
+    {{/if}}
+  </div>
+  <form class="form-inline pull-right search-form">
+    <div class="form-group">
+      {{input value=searchField.genderNName class="form-control" placeholder="名称"}}
+    </div>
+    <button type="submit" class="btn btn-default" {{action 'search'}}>查询</button>
+  </form>
+</div>
+<table class="table table-condensed table-bordered table-striped table-hover">
+  <thead>
+    <tr>
+      <th>{{input type="checkbox" checked=allAreSelect}}</th>
+      <th>Code</th>
+      <th>Name</th>
+      <th>EnName</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each gender in this itemController='comm/list/item'}}
+      <tr {{action 'select' gender}}>
+        <td>{{input type="checkbox" checked=gender.isSelect}}</td>
+        <td>{{#link-to 'genders.info' gender.id}}{{gender.code}}{{/link-to}}</td>
+        <td>{{gender.name}}</td>
+        <td>{{gender.enName}}</td>
+      </tr>
+    {{else}}
+      <tr><td colspan="7" align="center">genders is not found!</td></tr>
+    {{/each}}
+  </tbody>
+</table>
+{{partial 'comm/pagebar' this}}

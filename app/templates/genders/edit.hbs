@@ -1,0 +1,18 @@
+<div style="float:right; margin-top: -45px;">
+  {{#link-to 'genders.index' 1 20 class="btn btn-default"}}返回{{/link-to}}
+</div>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">基本信息</h3>
+  </div>
+  <div class="panel-body">
+    <form class="form-horizontal">
+      {{view 'comm/edit/input' label='Code' text=code}}
+      {{view 'comm/edit/input' label='Name' text=name}}
+      {{view 'comm/edit/input' label='EnName' text=enName}}
+    </form>
+  </div>
+</div>
+<div style="text-align:center;">
+  <button type="button" class="btn btn-primary" {{action 'save'}}>保存</button>
+</div>

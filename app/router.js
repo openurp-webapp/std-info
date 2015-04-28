@@ -21,6 +21,12 @@ Router.map(function() {
     this.route('info', {path: '/:id'});
     this.route('edit', {path: '/:id/edit'});
   });
+  this.route('genders', function() {
+    this.route('index', { path: '/:pageIndex/:pageSize' });
+    this.route('edit', {path: '/:id/edit'});
+    this.route('add');
+    this.route('info', {path: '/:id'});
+  });
 });
 
 export default Router;
